@@ -1,0 +1,129 @@
+/*------------------------------*\
+  PAGE: HOME MOBILE
+\*------------------------------*/
+
+/*------------------------------*\
+  HERO SECTION
+\*------------------------------*/
+
+#hero {
+  background: #4fc3f7 url(pattern.svg);
+  padding-top: 40px;
+  height: 400px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.hero-text h1,
+.hero-text h2 {
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 2em; /* 32px */
+  padding-top: 25px;
+  margin: initial;
+}
+
+.hero-text h2 {
+  font-weight: normal;
+  font-size: 1.125em; /* 18px */
+}
+
+.signup-context {
+  position: relative;
+}
+
+.signup-btn {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  background: white;
+  color: #4fc3f7;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 1.375em; /* 22px */
+  font-weight: bold;
+  border-radius: 2px;
+  transition: 0.2s ease-in-out;
+  position: absolute;
+  top: 230px;
+  left: 0;
+}
+
+.signup-btn:hover {
+  color: #3AB3EA;
+}
+
+
+/*------------------------------*\
+  INFO SECTION
+\*------------------------------*/
+
+#info {
+  text-align: center;
+}
+
+#info h3 {
+  font-size: 1.438em; /* 23px */
+  color: #313E50;
+}
+
+#info h4 {
+  color: #313E50;
+}
+
+#info .offer,
+#info .feature {
+  margin-bottom: 50px;
+}
+
+#info .feature:last-child {
+  margin-bottom: 0px;
+}
+
+#info .offer h3 {
+  margin-top: 0;
+}
+
+
+/*------------------------------*\
+  MEDIA QUERIES
+\*------------------------------*/
+
+@media (min-width: 680px) {
+
+  #hero {
+    padding-top: 65px;
+    height: 450px;
+  }
+
+  #info .feature {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 850px) {
+
+  .signup-btn {
+    width: 250px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .hero-text h1 {
+    font-size: 2.250em; /* 36px */
+  }
+
+  .hero-text h2 {
+    font-size: 1.313em; /* 21px */
+  }
+}
+
+@media (min-width: 943px) {
+
+  .hero-text h1 {
+    font-size: 2.813em; /* 45px */
+  }
+}

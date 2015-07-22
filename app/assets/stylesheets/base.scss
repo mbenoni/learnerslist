@@ -1,0 +1,540 @@
+/*------------------------------*\
+  GLOBAL STYLES
+\*------------------------------*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  background: white;
+  color: #738290;
+  padding-bottom: 100px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #313E50;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: 0.875em; /* 14px */
+  line-height: 1.8;
+  margin-top: 0;
+}
+
+a {
+  color: #738290;
+}
+
+a:hover {
+  color: #313E50;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+textarea {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  border: 1px solid #d2d8d8;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
+*:focus {
+  outline-color: #4fc3f7;
+}
+
+/* Checkboxes */
+label {
+  cursor: pointer;
+  display: inline-block;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + .label-text:before {
+  font-family: "FontAwesome";
+  content: "\f096";
+  width: 1em;
+  display: inline-block;
+  margin-left: 1px;
+  margin-right: 5px;
+}
+input[type="checkbox"]:checked + .label-text:before {
+  content: "\f046";
+  color: #4fc3f7;
+  -webkit-animation: tick 180ms ease-in;
+          animation: tick 180ms ease-in;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* Button styles */
+.btn {
+  background: #4fc3f7;
+  color: white;
+  border: none;
+  border-bottom: 3px solid #3AB3EA;
+  border-radius: 2px;
+  transition: 0.1s ease-in-out;
+}
+
+.btn-small {
+  padding: 10px 30px;
+}
+
+.btn-large {
+  padding: 15px 35px;
+}
+
+.btn:hover {
+  background: #3AB3EA;
+}
+
+/* Form with textured background */
+.texture-form {
+  background: url(geometry2.png);
+  padding: 50px 20px;
+}
+
+.texture-form .btn {
+  margin: 20px auto 0;
+}
+
+/* Form icons */
+.name-icon {
+  background: white url(user.svg) no-repeat 15px 15px;
+}
+
+.email-icon {
+  background: white url(email.svg) no-repeat 15px 15px;
+}
+
+.password-icon {
+  background: white url(lock_password.svg) no-repeat 15px 15px;
+}
+
+.password-confirmation-icon {
+  background: white url(confirm_password.svg) no-repeat 15px 15px;
+}
+
+.url-icon {
+  background: white url(url.svg) no-repeat 15px 11px;
+}
+
+.description-icon {
+  background: white url(description.svg) no-repeat 15px 11px;
+}
+
+.tags-icon {
+  background: white url(folder-o.svg) no-repeat 12px 5px;
+}
+
+
+/*------------------------------*\
+  STICKY FOOTER
+\*------------------------------*/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 72px; /* margin bottom = footer height */
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
+}
+
+
+/*------------------------------*\
+  GRID MOBILE
+\*------------------------------*/
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
+/*------------------------------*\
+  HEADER
+\*------------------------------*/
+
+.main-nav {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  border-bottom: 1px solid rgba(140, 152, 158, 0.2);
+}
+
+.main-nav ul {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+  display: none;
+}
+
+.main-nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.main-nav ul li:last-child a {
+  padding-right: 0;
+}
+
+.main-nav h1 {
+  float: left;
+  margin: 18px 0 0 0;
+}
+
+.main-nav h1 a {
+  text-decoration: none;
+  color: #4fc3f7;
+}
+
+
+/*------------------------------*\
+  FOOTER
+\*------------------------------*/
+
+footer {
+  text-align: center;
+  background: #4fc3f7 url(pattern.svg);
+  color: white;
+}
+
+.footer-text {
+  margin: 15px 0;
+  font-size: 0.750em; /* 12px */
+}
+
+.footer-text .heart {
+  display: inline;
+  color: #E83838;
+  font-size: 1em; /* 12px */
+}
+
+
+/*------------------------------*\
+  LOGIN/SIGNUP MODAL WINDOW
+\*------------------------------*/
+
+#login-overlay,
+#signup-overlay {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+
+#login-overlay-div,
+#signup-overlay-div {
+  margin-top: 330px;
+  background-color: white;
+  padding: 0px 20px 40px 20px;
+  border-radius: 2px;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+#login-overlay.visible,
+#signup-overlay.visible {
+  visibility: visible;
+  background-color: rgba(0,0,0,0.6);
+}
+
+#login-overlay.visible #login-overlay-div,
+#signup-overlay.visible #signup-overlay-div {
+  margin-top: 100px;
+  opacity: 1;
+}
+
+#login-overlay div {
+  padding-bottom: 63px;
+}
+
+#login-overlay div h1,
+#signup-overlay div h1 {
+  padding-top: 49px;
+}
+
+/* Exit modal icon */
+#login-overlay .fa-times,
+#signup-overlay .fa-times {
+  float: right;
+  color: #313E50;
+  font-size: 24px;
+  padding: 5px;
+  margin-top: 15px;
+  margin-right: -5px;
+}
+
+/* Mobile navigation */
+.mobile-nav {
+  font-size: 1.125em; /* 18px */
+  width: 100%;
+  background: white;
+  text-align: center;
+  position: absolute;
+  z-index: 1000000;
+  display: none;
+}
+
+.mobile-nav li {
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(140, 152, 158, 0.2);
+}
+
+.mobile-nav li:hover {
+  color: #313E50;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+}
+
+/* Hamburger icon with transition */
+#nav-icon {
+  width: 33px;
+  height: 25px;
+  position: relative;
+  display: inline-block;
+  z-index: 999;
+  margin: 0 auto;
+  margin-top: 30px;
+  float: right;
+  cursor: pointer;
+}
+
+#nav-icon span {
+  position: absolute;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: #4fc3f7;
+  border-radius: 9px;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon span:nth-child(2) {
+  top: 10px;
+}
+
+#nav-icon span:nth-child(3) {
+  top: 20px;
+
+}
+
+#nav-icon.open span:nth-child(1) {
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
+
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: -2px;
+  left: 5px;
+}
+
+#nav-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
+
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 22px;
+  left: 5px;
+}
+
+
+/*------------------------------*\
+  MEDIA QUERIES
+\*------------------------------*/
+
+@media (min-width: 680px) {
+
+  body {
+    padding-top: 80px;
+  }
+
+
+  /*------------------------------*\
+    GRID LARGER DEVICES
+  \*------------------------------*/
+
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-10,
+  .col-11,
+  .col-12 {
+    padding-right: 15px;
+    padding-left: 15px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+  .col-11 {
+    width: 91.66666667%;;
+  }
+  .col-10 {
+    width: 83.33333333%;;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-8 {
+    width: 66.66666667%;
+  }
+  .col-7 {
+    width: 58.33333333%;;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-5 {
+    width: 41.66666667%;
+  }
+  .col-4 {
+    width: 33.33333333%;;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-2 {
+    width: 16.66666667%;
+  }
+  .col-1 {
+    width: 8.33333333%;;
+  }
+
+  .centered {
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  /*------------------------------*\
+    HEADER LARGER DEVICES
+  \*------------------------------*/
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    margin-bottom: 0;
+  }
+
+  .main-nav ul {
+    display: inline-block;
+  }
+  
+  #nav-icon {
+    display: none;
+  }
+
+  .mobile-nav ul {
+    display: none;
+  }
+}
+
+@media (min-width: 850px) {
+  p {
+    font-size: 1em;
+    margin-bottom: 2em;
+  }
+
+  .texture-form form {
+    width: 50%;
+  }
+}
+
+
+@media (min-width: 943px) {
+
+  h1 {
+    font-size: 2.500em; /* 40px */
+  }
+
+  .main-nav h1 {
+    font-size: 2em;
+  }
+}

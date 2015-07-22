@@ -1,0 +1,49 @@
+/*------------------------------*\
+  PAGE: LOG IN
+\*------------------------------*/
+
+.login-form,
+.signup-form {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
+
+.login-form .btn {
+  float: right;
+}
+
+
+/*------------------------------*\
+  PAGE: SIGN UP
+\*------------------------------*/
+
+.signup-form .btn {
+  margin: 30px auto 0 auto;
+  display: block;
+}
+
+
+/*------------------------------*\
+  MEDIA QUERIES
+\*------------------------------*/
+
+@media (min-width: 850px) {
+
+  .resource-url {
+    font-size: 1.250em; /* 20px */
+  }
+
+  .edit-delete {
+    display: inline-block;
+  }
+
+  .resource-item .resource-description {
+    font-size: 0.938em; /* 15px */
+  }
+
+  .login-form,
+  .signup-form {
+    width: 390px;
+  }
+}
