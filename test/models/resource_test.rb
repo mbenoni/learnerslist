@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class ResourceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  def setup
+    @resource = Resource.new(url: "www.google.com", 
+                             description: "Good website.")
+  end
+
+  test "should be valid" do
+    assert @resource.valid?
+  end
 end
