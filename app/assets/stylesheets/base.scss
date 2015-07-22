@@ -122,7 +122,7 @@ img {
 
 /* Form with textured background */
 .texture-form {
-  background: image-url(geometry2.png);
+  background: image-url("geometry2.png");
   padding: 50px 20px;
 }
 
@@ -132,31 +132,31 @@ img {
 
 /* Form icons */
 .name-icon {
-  background: white image-url(user.svg) no-repeat 15px 15px;
+  background: white image-url("user.svg") no-repeat 15px 15px;
 }
 
 .email-icon {
-  background: white image-url(email.svg) no-repeat 15px 15px;
+  background: white image-url("email.svg") no-repeat 15px 15px;
 }
 
 .password-icon {
-  background: white image-url(lock_password.svg) no-repeat 15px 15px;
+  background: white image-url("lock_password.svg") no-repeat 15px 15px;
 }
 
 .password-confirmation-icon {
-  background: white image-url(confirm_password.svg) no-repeat 15px 15px;
+  background: white image-url("confirm_password.svg") no-repeat 15px 15px;
 }
 
 .url-icon {
-  background: white image-url(url.svg) no-repeat 15px 11px;
+  background: white image-url("url.svg") no-repeat 15px 11px;
 }
 
 .description-icon {
-  background: white image-url(description.svg) no-repeat 15px 11px;
+  background: white image-url("description.svg") no-repeat 15px 11px;
 }
 
 .tags-icon {
-  background: white image-url(folder-o.svg) no-repeat 12px 5px;
+  background: white image-url("folder-o.svg") no-repeat 12px 5px;
 }
 
 
@@ -244,7 +244,7 @@ footer {
 
 footer {
   text-align: center;
-  background: #4fc3f7 image-url(pattern.svg);
+  background: #4fc3f7 image-url("pattern.svg");
   color: white;
 }
 
