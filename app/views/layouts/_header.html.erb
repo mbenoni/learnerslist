@@ -1,24 +1,30 @@
 <header>
   <nav class="main-nav homepage-nav">
     <div class="container">
-      <h1><a href="index.html">LearnersList</a></h1>
+      <h1><%= link_to "LearnersList", root_path %></h1>
       <div id="nav-icon">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <ul>
-        <li><a href="index.html">Home</a></li><!--
-     --><li><a href="about.html">About</a></li><!--
-     --><li><a class="login-modal" href="#">Log in</a></li>
+        <li><%= link_to "Home", root_path %></li><!--
+     --><li><%= link_to "About", about_path %></li><!--
+     --><li><%= link_to "Log in", "#", class: "login-modal" %></li>
       </ul>
     </div>
   </nav>
   <nav class="mobile-nav">
     <ul>
-      <a href="index.html"><li>Home</li></a>
-      <a href="about.html"><li>About</li></a>
-      <a href="login.html"><li>Log in</li></a>
+      <%= link_to root_path do %>
+        <li>Home</li>
+      <% end %>
+      <%= link_to about_path do %>
+        <li>About</li>
+      <% end %>
+      <%= link_to "#" do %>
+        <li>Log in</li>
+      <% end %>
     </ul>
   </nav>
 </header>

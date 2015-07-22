@@ -1,0 +1,154 @@
+<div class="container">
+  <h1>All Learning Resources</h1>
+  <div class="texture-form resource-form">
+    <form class="centered" method="post" action="#">
+      <input class="url-icon" type="text" placeholder="URL" required>
+
+      <textarea class="description-icon" placeholder="Short description" maxlength="80" required></textarea>
+
+      <input class="tags-icon" type="text" placeholder="Tags">
+
+      <input class="btn btn-small" type="submit" value="Add new resource">
+    </form>
+  </div>
+
+  <nav class="pagination-nav">
+    <ul class="pagination">
+      <li><a href="#">&laquo;</a></li><!--
+   --><li><a href="#">1</a></li><!--
+   --><li><a href="#">2</a></li><!--
+   --><li><a href="#">3</a></li><!--
+   --><li><a href="#">4</a></li><!--
+   --><li><a href="#">5</a></li><!--
+   --><li><a href="#">&raquo;</a></li>
+    </ul>
+  </nav>
+
+  <ul class="resources-list">
+    <li class="resource-item">
+      <div class="resource-image">
+        <%= image_tag "treehouse_thumb.png" %>
+      </div>
+      <div class="resource-text">
+        <a class="resource-url" href="http://teamtreehouse.com/">Teamtreehouse.com</a>
+        <input class="edit-resource-url url-icon" type="text" value="www.teamtreehouse.com" placeholder="URL">
+        <p class="resource-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tortor posuere.</p>
+        <textarea class="edit-resource-description description-icon" placeholder="Short description">Courses in HTML, CSS, JavaScript and more.</textarea>
+        <input class="edit-resource-tags tags-icon" type="text" value="programming, design, business" placeholder="Tags">
+        <div class="resource-extras">
+          <label>
+            <input type="checkbox">
+            <span class="label-text">Completed?</span>
+          </label>
+          <span class="edit-delete"><a class="edit-resource" href="#">Edit</a> | <a class="delete-resource" href="#">Delete</a></span>
+        </div>
+      </div>
+    </li>
+    <li class="resource-item">
+      <div class="resource-image">
+        <%= image_tag "codeschool_thumb.png" %>
+      </div>
+      <div class="resource-text">
+        <a class="resource-url" href="http://codeschool.com/">Codeschool.com</a>
+        <input class="edit-resource-url url-icon" type="text" value="www.codeschool.com" placeholder="URL">
+        <p class="resource-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tortor posuere.</p>
+        <textarea class="edit-resource-description description-icon" placeholder="Short description">Courses in HTML, CSS, JavaScript and more.</textarea>
+        <input class="edit-resource-tags tags-icon" type="text" value="programming, design, business" placeholder="Tags">
+        <div class="resource-extras">
+          <label>
+            <input type="checkbox">
+            <span class="label-text">Completed?</span>
+          </label>
+          <span class="edit-delete"><a class="edit-resource" href="#">Edit</a> | <a class="delete-resource" href="#">Delete</a></span>
+        </div>
+      </div>
+    </li>
+    <li class="resource-item">
+      <div class="resource-image">
+        <%= image_tag "typoguide_thumb.png" %>
+      </div>
+      <div class="resource-text">
+        <a class="resource-url" href="http://typogui.de/">Typogui.de</a>
+        <input class="edit-resource-url url-icon" type="text" value="www.teamtreehouse.com" placeholder="URL">
+        <p class="resource-description">Good site about web typography.</p>
+        <textarea class="edit-resource-description description-icon" placeholder="Short description">Courses in HTML, CSS, JavaScript and more.</textarea>
+        <input class="edit-resource-tags tags-icon" type="text" value="programming, design, business" placeholder="Tags">
+        <div class="resource-extras">
+          <label>
+            <input type="checkbox">
+            <span class="label-text">Completed?</span>
+          </label>
+          <span class="edit-delete"><a class="edit-resource" href="#">Edit</a> | <a class="delete-resource" href="#">Delete</a></span>
+        </div>
+      </div>
+    </li>
+    <li class="resource-item">
+      <div class="resource-image">
+        <%= image_tag "unicasts_thumb.png" %>
+      </div>
+      <div class="resource-text">
+        <a class="resource-url" href="http://unicasts.com/">Unicasts.com</a>
+        <input class="edit-resource-url url-icon" type="text" value="www.unicasts.com" placeholder="URL">
+        <p class="resource-description">Learn to build RoR apps from design to development.</p>
+        <textarea class="edit-resource-description description-icon" placeholder="Short description">Learn to build RoR apps from design to development.</textarea>
+        <input class="edit-resource-tags tags-icon" type="text" value="programming, design, business" placeholder="Tags">
+        <div class="resource-extras">
+          <label>
+            <input type="checkbox">
+            <span class="label-text">Completed?</span>
+          </label>
+          <span class="edit-delete"><a class="edit-resource" href="#">Edit</a> | <a class="delete-resource" href="#">Delete</a></span>
+        </div>
+      </div>
+    </li>
+    <li class="resource-item">
+      <div class="resource-image">
+        <%= image_tag "leanpub_thumb.png" %>
+      </div>
+      <div class="resource-text">
+        <a class="resource-url" href="http://leanpub.com/mean-machine">Leanpub.com/mean-machine</a>
+        <input class="edit-resource-url url-icon" type="text" value="www.unicasts.com" placeholder="URL">
+        <p class="resource-description">Book to learn the MEAN stack.</p>
+        <textarea class="edit-resource-description description-icon" placeholder="Short description">Book to learn the MEAN stack.</textarea>
+        <input class="edit-resource-tags tags-icon" type="text" value="programming, design, business" placeholder="Tags">
+        <div class="resource-extras">
+          <label>
+            <input type="checkbox">
+            <span class="label-text">Completed?</span>
+          </label>
+          <span class="edit-delete"><a class="edit-resource" href="#">Edit</a> | <a class="delete-resource" href="#">Delete</a></span>
+        </div>
+      </div>
+    </li>
+    <li class="resource-item">
+      <div class="resource-image">
+       <%= image_tag "programmingformarketers_thumb.png" %>
+      </div>
+      <div class="resource-text">
+        <a class="resource-url" href="http://programmingformarketers.com/">Programmingformarketers.com</a>
+        <input class="edit-resource-url url-icon" type="text" value="www.unicasts.com" placeholder="URL">
+        <p class="resource-description">E-mail course about programming for marketers</p>
+        <textarea class="edit-resource-description description-icon" placeholder="Short description">Book to learn the MEAN stack.</textarea>
+        <input class="edit-resource-tags tags-icon" type="text" value="programming, design, business" placeholder="Tags">
+        <div class="resource-extras">
+          <label>
+            <input type="checkbox">
+            <span class="label-text">Completed?</span>
+          </label>
+          <span class="edit-delete"><a class="edit-resource" href="#">Edit</a> | <a class="delete-resource" href="#">Delete</a></span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <nav class="pagination-nav">
+    <ul class="pagination">
+      <li><a href="#">&laquo;</a></li><!--
+   --><li><a href="#">1</a></li><!--
+   --><li><a href="#">2</a></li><!--
+   --><li><a href="#">3</a></li><!--
+   --><li><a href="#">4</a></li><!--
+   --><li><a href="#">5</a></li><!--
+   --><li><a href="#">&raquo;</a></li>
+    </ul>
+  </nav>
+</div>
