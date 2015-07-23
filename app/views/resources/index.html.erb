@@ -2,15 +2,15 @@
 <div class="container">
   <h1>All Learning Resources</h1>
   <div class="texture-form resource-form">
-    <form class="centered" method="post" action="#">
-      <input class="url-icon" type="text" placeholder="URL" required>
-
-      <textarea class="description-icon" placeholder="Short description" maxlength="80" required></textarea>
-
-      <input class="tags-icon" type="text" placeholder="Tags">
-
-      <input class="btn btn-small" type="submit" value="Add new resource">
-    </form>
+    <%= form_for @resource, html: { class: "centered" } do |f| %>
+      <%= f.text_field :url, class: "url-icon", placeholder: "URL",
+                             required: true %>
+      <%= f.text_area :description, class: "description-icon",
+                                    placeholder: "Short description",
+                                    maxlength: 80, 
+                                    required: true %>
+      <%= f.submit "Add new resource", class: "btn btn-small" %>
+    <% end %>
   </div>
 
   <nav class="pagination-nav">
