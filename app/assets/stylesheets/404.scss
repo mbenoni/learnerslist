@@ -2,29 +2,25 @@
   404 PAGE
 \*------------------------------*/
 
-.four-oh-four h1 {
-    font-size: 60px;
-    margin-top: 60px;
-  }
-
-  .four-oh-four {
+.four-oh-four {
     text-align: center;
-  }
-
-  .four-oh-four h2 {
-    font-size: 1.125em; /* 18px */
-    font-weight: normal;
-    line-height: 1.5;
-    margin-bottom: 2em;
-  }
-
-  .four-oh-four a {
-    text-decoration: none;
-    transition: 0.2s ease-in-out;
-  }
-
-  .four-oh-four .fa-long-arrow-left {
-    margin-right: 15px;
+    h1 {
+      font-size: 60px;
+      margin-top: 60px;
+    }
+    h2 {
+      font-size: 1.125em; /* 18px */
+      font-weight: normal;
+      line-height: 1.5;
+      margin-bottom: 2em;
+    }
+    a {
+      text-decoration: none;
+      transition: 0.2s ease-in-out;
+    }
+    .fa-long-arrow-left {
+      margin-right: 15px;
+    }
   }
 
 

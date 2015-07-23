@@ -14,20 +14,20 @@
   text-align: center;
 }
 
-.hero-text h1,
-.hero-text h2 {
-  color: white;
-}
-
-.hero-text h1 {
-  font-size: 2em; /* 32px */
-  padding-top: 25px;
-  margin: initial;
-}
-
-.hero-text h2 {
-  font-weight: normal;
-  font-size: 1.125em; /* 18px */
+.hero-text {
+  h1,
+  h2 {
+    color: white;
+  }
+  h1 {
+    font-size: 2em; /* 32px */
+    padding-top: 25px;
+    margin: initial;
+  }
+  h2 {
+    font-weight: normal;
+    font-size: 1.125em; /* 18px */
+  }
 }
 
 .signup-context {
@@ -49,10 +49,9 @@
   position: absolute;
   top: 230px;
   left: 0;
-}
-
-.signup-btn:hover {
-  color: #3AB3EA;
+  &:hover {
+    color: #3AB3EA;
+  }
 }
 
 
@@ -62,28 +61,23 @@
 
 #info {
   text-align: center;
-}
-
-#info h3 {
-  font-size: 1.438em; /* 23px */
-  color: #313E50;
-}
-
-#info h4 {
-  color: #313E50;
-}
-
-#info .offer,
-#info .feature {
-  margin-bottom: 50px;
-}
-
-#info .feature:last-child {
-  margin-bottom: 0px;
-}
-
-#info .offer h3 {
-  margin-top: 0;
+  h3 {
+    font-size: 1.438em; /* 23px */
+    color: #313E50;
+  }
+  h4 {
+    color: #313E50;
+  }
+  .offer,
+  .feature {
+    margin-bottom: 50px;
+  }
+  .feature:last-child {
+    margin-bottom: 0px;
+  }
+  .offer h3 {
+    margin-top: 0;
+  }
 }
 
 
@@ -112,12 +106,13 @@
     margin: 0 auto;
   }
 
-  .hero-text h1 {
-    font-size: 2.250em; /* 36px */
-  }
-
-  .hero-text h2 {
-    font-size: 1.313em; /* 21px */
+  .hero-text {
+    h1 {
+      font-size: 2.250em; /* 36px */
+    }
+    h2 {
+      font-size: 1.313em; /* 21px */
+    }
   }
 }
 
