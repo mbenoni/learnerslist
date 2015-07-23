@@ -75,6 +75,33 @@
   transition: 0.2s ease-in-out;
 }
 
+.delete-resource {
+  display: inline-block;
+}
+
+.delete-resource input[type="submit"] {
+  background-color: transparent;
+  border: none;
+  font-size: 0.813rem; /* 13px */
+  padding: 0;
+  transition: 0.2s ease-in-out;
+  color: #738290;
+}
+
+.delete-resource input[type="submit"]:hover {
+  color: #313E50;
+}
+
+input::-moz-focus-inner { /* Fix button problem in Firefox */
+  border: 0;
+  padding: 0;
+  margin-bottom: -3px;
+}
+
+input[type="submit"]:focus:active { /* Remove border in Chrome */
+  outline: none;
+}
+
 .resource-item.completed,
 .resource-item.completed a,
 .resource-item.completed input[type="checkbox"]:checked + .label-text:before {

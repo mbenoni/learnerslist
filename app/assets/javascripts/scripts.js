@@ -64,19 +64,6 @@ $( document ).ready(function() {
     }
   });
 
-
-  // Confirm deleting a resource
-  $(".delete-resource").click(function(evt) {
-    evt.preventDefault();
-    swal({   
-      title: "Are you sure?",      
-      type: "warning",   
-      showCancelButton: true,   
-      confirmButtonColor: "#DD6B55",   
-      confirmButtonText: "Yes, delete it!"
-    });
-  });
-
   // Show or hide mobile navigation
   $("#nav-icon").click(function() {
     $(".mobile-nav").slideToggle();

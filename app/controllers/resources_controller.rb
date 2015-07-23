@@ -16,6 +16,13 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def destroy
+    @resource = Resource.find(params[:id])
+    @resource.destroy
+    flash[:success] = "Resource deleted"
+    redirect_to resources_path
+  end
+
   private
 
     def resource_params
