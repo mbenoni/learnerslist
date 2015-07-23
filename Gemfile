@@ -8,6 +8,7 @@ gem 'coffee-rails',         '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+gem "font-awesome-rails"
 gem 'jbuilder',             '~> 2.0'
 gem 'sdoc',                 '~> 0.4.0', group: :doc
 
@@ -25,6 +26,6 @@ end
 
 group :production do
   gem 'pg',                 '0.17.1'
-  gem 'rails_12factor',     '0.0.2'
+  gem 'rails_12factor'
   gem 'puma',               '2.11.1'
 end
