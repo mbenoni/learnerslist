@@ -3,6 +3,17 @@
   <h1>All Learning Resources</h1>
   <div class="texture-form resource-form">
     <%= form_for @resource, html: { class: "centered" } do |f| %>
+      
+      <% if @resource.errors.any? %>
+        <div class="error-explanation">
+          <ul>
+            <% @resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
       <%= f.text_field :url, class: "url-icon", placeholder: "URL",
                              required: true %>
       <%= f.text_area :description, class: "description-icon",
@@ -26,6 +37,10 @@
   </nav>
 
   <ul class="resources-list">
+    <%= render @resources %>
+  </ul>
+
+  <!-- <ul class="resources-list">
     <li class="resource-item">
       <div class="resource-image">
         <%= image_tag "treehouse_thumb.png" %>
@@ -140,7 +155,7 @@
         </div>
       </div>
     </li>
-  </ul>
+  </ul> -->
   <nav class="pagination-nav">
     <ul class="pagination">
       <li><a href="#">&laquo;</a></li><!--

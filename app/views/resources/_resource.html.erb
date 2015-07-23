@@ -1,0 +1,22 @@
+<li class="resource-item">
+  <div class="resource-image">
+    <%= image_tag "treehouse_thumb.png" %>
+  </div>
+
+  <div class="resource-text">
+    <%= link_to urltitle(resource.url), resource.url, class: "resource-url" %>
+    <input class="edit-resource-url url-icon" type="text" value=<%= resource.url %> placeholder="URL">
+
+    <p class="resource-description"><%= resource.description %></p>
+    <textarea class="edit-resource-description description-icon" placeholder="Short description"><%= resource.description %></textarea>
+
+    <div class="resource-extras">
+      <label>
+        <input type="checkbox">
+        <span class="label-text">Completed?</span>
+      </label>
+      <span class="edit-delete"><a class="edit-resource" href="#">Edit</a> | <a class="delete-resource" href="#">Delete</a></span>
+    </div>
+
+  </div>
+</li>
