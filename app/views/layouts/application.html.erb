@@ -9,14 +9,12 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-
-    <div class="container flash-container">
+    <% if flash.any? %>
       <%= render 'shared/flash' %>
-    </div>
+    <% end %>
 
+    <%= render 'layouts/header' %>
     <%= yield %>
-    
     <%= render 'layouts/footer' %>
   </body>
 </html>

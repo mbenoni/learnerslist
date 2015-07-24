@@ -3,7 +3,13 @@
   $("<%= j(render @resource) %>").hide()
                                  .prependTo(".resources-list")
                                  .fadeIn("slow");
+  // Empty form fields
   $("#new_resource")[0].reset();
+  // Fade out flash after a few seconds
+  $("<%= j(render 'shared/flash') %>").prependTo("body")
+                                      .fadeIn("slow")
+                                      .delay(2500)
+                                      .fadeOut("slow");
 <% end %>
 
 <% if @resource.errors.any? %>
@@ -12,5 +18,3 @@
   $("<%= j(render 'shared/error_messages', object: @resource) %>")
   .prependTo("#new_resource");
 <% end %>
-
-$(".flash-container").html("<%= j(render 'shared/flash') %>");

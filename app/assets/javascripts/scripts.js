@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
   console.log( "ready!" );
 
   // Show login modal
@@ -69,4 +69,11 @@ $( document ).ready(function() {
     $(".mobile-nav").slideToggle();
     $(this).toggleClass("open");
   });
+
+  // Fade out flash after a few seconds
+  if ( $("#flash-container").length ) {
+    $("#flash-container").fadeIn("slow")
+                         .delay(2500)
+                         .fadeOut("slow");
+  }
 });
