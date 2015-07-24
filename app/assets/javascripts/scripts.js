@@ -39,7 +39,7 @@ $( document ).ready(function() {
 
 
   // Add class to parent element and change text when clicked
-  $('.resource-item input[type="checkbox"]').click(function() {
+  $('.resources-list').on("click", ".resource-item input[type='checkbox']", function() {
     var $parent    = $(this).closest(".resource-item");
     var $labelText = $(this).next();
 
@@ -53,7 +53,7 @@ $( document ).ready(function() {
   });
 
   // Show or hide edit form when clicked
-  $(".edit-resource").click(function(event) {
+  $(".resources-list").on("click", ".edit-resource", function(event) {
     event.preventDefault();
     if ($(this).closest(".resource-item").hasClass("edit-mode")) {
       $(this).closest(".resource-item").removeClass("edit-mode");

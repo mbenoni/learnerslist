@@ -195,21 +195,22 @@ input[type="text"].edit-resource-tags {
 /* Forms initially hidden */
 .edit-resource-url,
 .edit-resource-description,
-.edit-resource-tags {
+.edit-resource-tags,
+.submit-changes {
   display: none;
 }
 
 /* Display forms when editing */
 .edit-mode .edit-resource-url,
 .edit-mode .edit-resource-description,
-.edit-mode .edit-resource-tags {
+.edit-mode .edit-resource-tags,
+.edit-mode .submit-changes {
   display: block;
 }
 
 /* Hide text when editing */
 .edit-mode .resource-url,
-.edit-mode .resource-description,
-.edit-mode label {
+.edit-mode .resource-description {
   display: none;
 }
 

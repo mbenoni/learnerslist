@@ -1,16 +1,25 @@
-<li class="resource-item">
+<li class="resource-item" id="resource-<%= resource.id %>">
   <div class="resource-image">
     <%= image_tag "treehouse_thumb.png" %>
   </div>
 
   <div class="resource-text">
     <%= link_to urltitle(resource.url), resource.url, class: "resource-url" %>
-    <input class="edit-resource-url url-icon" type="text" value=
-    <%= resource.url %> placeholder="URL">
-
     <p class="resource-description"><%= resource.description %></p>
-    <textarea class="edit-resource-description description-icon"
-     placeholder="Short description"><%= resource.description %></textarea>
+    
+    <%= form_for resource, html: { class: "centered" } do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.text_field :url, class: "edit-resource-url url-icon",
+                             placeholder: "URL",
+                             required: true %>
+      <%= f.text_area :description, class: "edit-resource-description 
+                                            description-icon",
+                                    placeholder: "Short description",
+                                    maxlength: 80, 
+                                    required: true %>
+      <%= f.submit "Update resource", class: "submit-changes" %>                      
+    <% end %>
+
 
     <div class="resource-extras">
       <label>

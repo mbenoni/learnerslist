@@ -1,0 +1,10 @@
+<% if @resource.valid? %>
+  $(".error-explanation").remove();
+  $("<%= escape_javascript(render @resource) %>").hide().prependTo(".resources-list").fadeIn("slow");
+  $("#new_resource")[0].reset();
+<% end %>
+<% if @resource.errors.any? %>
+  console.log("error detected");
+  $(".error-explanation").remove();
+  $("<%= escape_javascript(render 'shared/error_messages', object: @resource) %>").prependTo("#new_resource");
+<% end %>
