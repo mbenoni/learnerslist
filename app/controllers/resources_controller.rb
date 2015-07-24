@@ -10,13 +10,11 @@ class ResourcesController < ApplicationController
  
   respond_to do |format|
     if @resource.save
-      format.html { redirect_to @resource, success: 'Resource was successfully created.' }
-      format.js   {}
-      format.json { render json: @resource, status: :created, location: @resource }
+      format.html { redirect_to @resource, success: 'New resource added' }
+      format.js   { flash.now[:success] = "New resource added" }
     else
       format.html { render action: "new" }
-      format.json { render json: @resource.errors, status: :unprocessable_entity }
-      format.js
+      format.js   {}
     end
   end
 end
