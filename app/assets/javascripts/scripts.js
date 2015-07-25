@@ -53,15 +53,13 @@ $(document).ready(function() {
   });
 
   // Show or hide edit form when clicked
-  $(".resources-list").on("click", ".edit-resource", function(event) {
+  $(".resources-list").on("click", ".edit-resource-btn", function(event) {
     event.preventDefault();
-    if ($(this).closest(".resource-item").hasClass("edit-mode")) {
-      $(this).closest(".resource-item").removeClass("edit-mode");
-      $(this).text("Edit");
-    } else {
-      $(this).closest(".resource-item").addClass("edit-mode");
-      $(this).text("Done editing");
-    }
+    $(this).hide()
+           .prev()
+           .show()
+           .closest(".resource-item")
+           .addClass("edit-mode");
   });
 
   // Show or hide mobile navigation

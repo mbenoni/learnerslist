@@ -7,7 +7,7 @@
     <%= link_to urltitle(resource.url), resource.url, class: "resource-url" %>
     <p class="resource-description"><%= resource.description %></p>
     
-    <%= form_for resource, html: { class: "centered" } do |f| %>
+    <%= form_for resource, remote: true, authenticity_token: true, html: { class: "centered" } do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.text_field :url, class: "edit-resource-url url-icon",
                              placeholder: "URL",
@@ -17,7 +17,7 @@
                                     placeholder: "Short description",
                                     maxlength: 80, 
                                     required: true %>
-      <%= f.submit "Update resource", class: "submit-changes" %>                      
+      <%= f.submit "Update resource", id: "update-resource-btn-#{resource.id}" %>                      
     <% end %>
 
 
@@ -26,8 +26,10 @@
         <input type="checkbox">
         <span class="label-text">Completed?</span>
       </label>
-      <span class="edit-delete"><a class="edit-resource" href="#">Edit</a>
-       | <%= button_to "Delete", resource,
+      <span class="edit-delete">
+        <label for="update-resource-btn-<%= resource.id %>">Done editing</label>
+        <a class="edit-resource-btn" href="#">Edit</a>&nbsp;|
+        <%= button_to "Delete", resource,
                                  remote: true,
                                  form_class: "delete-resource",
                                  method: :delete,

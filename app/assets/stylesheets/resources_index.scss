@@ -186,7 +186,7 @@ input[type="text"].edit-resource-tags {
   padding: 5px 5px 5px 40px;
   width: 100%;
   margin-bottom: 5px;
-  background-position: 10px 6px;
+  background-position: 10px 5px;
 }
 
 input[type="text"].edit-resource-tags {
@@ -196,16 +196,23 @@ input[type="text"].edit-resource-tags {
 /* Forms initially hidden */
 .edit-resource-url,
 .edit-resource-description,
-.edit-resource-tags,
-.submit-changes {
+.edit-resource-tags {
+  display: none;
+}
+
+/* Submit button always hidden, only show label */
+[id^="update-resource-btn-"] {
+  display: none;
+}
+
+label[for^="update-resource-btn-"] {
   display: none;
 }
 
 /* Display forms when editing */
 .edit-mode .edit-resource-url,
 .edit-mode .edit-resource-description,
-.edit-mode .edit-resource-tags,
-.edit-mode .submit-changes {
+.edit-mode .edit-resource-tags {
   display: block;
 }
 

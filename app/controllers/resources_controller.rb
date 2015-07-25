@@ -6,26 +6,33 @@ class ResourcesController < ApplicationController
   end
 
   def create
-  @resource = Resource.new(resource_params)
- 
-  respond_to do |format|
-    if @resource.save
-      format.html { redirect_to resources_path,
-                    success: "New resource added" }
-      format.js   { flash.now[:success] = "New resource added" }
-    else
-      format.html { render action: "new" }
-      format.js   {}
+    @resource = Resource.new(resource_params)
+    @resources = Resource.all.order(created_at: :desc)
+   
+    respond_to do |format|
+      if @resource.save
+        format.html { redirect_to resources_path,
+                      success: "New resource added" }
+        format.js   { flash.now[:success] = "New resource added" }
+      else
+        format.html { render 'index' }
+        format.js   {}
+      end
     end
   end
-end
 
   def update
     @resource = Resource.find(params[:id])
-    if @resource.update_attributes(resource_params)
-      redirect_to resources_path, success: "Resource updated"
-    else
-      render 'index'
+
+    respond_to do |format|
+      if @resource.update_attributes(resource_params)
+        format.html { redirect_to resources_path,
+                      success: "Resource updated" }
+        format.js   { flash.now[:success] = "Resource updated" }
+      else
+        format.html { render 'index' }
+        format.js   {}
+      end
     end
   end
 
