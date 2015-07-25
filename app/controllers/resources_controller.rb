@@ -10,7 +10,8 @@ class ResourcesController < ApplicationController
  
   respond_to do |format|
     if @resource.save
-      format.html { redirect_to @resource, success: 'New resource added' }
+      format.html { redirect_to resources_path,
+                    success: "New resource added" }
       format.js   { flash.now[:success] = "New resource added" }
     else
       format.html { render action: "new" }
@@ -22,8 +23,7 @@ end
   def update
     @resource = Resource.find(params[:id])
     if @resource.update_attributes(resource_params)
-      flash[:success] = "Resource updated"
-      redirect_to resources_path
+      redirect_to resources_path, success: "Resource updated"
     else
       render 'index'
     end
@@ -32,8 +32,12 @@ end
   def destroy
     @resource = Resource.find(params[:id])
     @resource.destroy
-    flash[:success] = "Resource deleted"
-    redirect_to resources_path
+
+    respond_to do |format|
+      format.html { redirect_to resources_path,
+                    success: "Resource deleted" }
+      format.js   { flash.now[:success] = "Resource deleted" }
+    end
   end
 
   private

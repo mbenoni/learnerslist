@@ -28,9 +28,10 @@
       </label>
       <span class="edit-delete"><a class="edit-resource" href="#">Edit</a>
        | <%= button_to "Delete", resource,
-                        form_class: "delete-resource",
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } %></span>
+                                 remote: true,
+                                 form_class: "delete-resource",
+                                 method: :delete,
+                                 data: { confirm: "Are you sure?" } %></span>
     </div>
 
   </div>

@@ -2,7 +2,7 @@
   $(".error-explanation").remove();
   $("<%= j(render @resource) %>").hide()
                                  .prependTo(".resources-list")
-                                 .fadeIn("slow");
+                                 .slideDown("slow");
   // Empty form fields
   $("#new_resource")[0].reset();
   // Fade out flash after a few seconds
