@@ -1,12 +1,12 @@
 <% if @resource.valid? %>
   <% if @resource.completed_status_changed == true %>
     console.log("completed changed");
-    $("#resource-<%= @resource.id %>").replaceWith("<%= j(render @resource) %>");
+    $("#resource-<%= @resource.id %>").replaceWith("<%= j render(@resource) %>");
   <% else %>
     console.log("completed not changed");
     // Get updated item and replace the old
     $oldResourceItem = $("#resource-<%= @resource.id %>");
-    $newResourceItem = $("<%= j(render @resource) %>").hide();
+    $newResourceItem = $("<%= j render(@resource) %>").hide();
 
     $oldResourceItem.slideUp("slow", function() {
       $oldResourceItem.replaceWith($newResourceItem);
@@ -14,7 +14,7 @@
     });
 
     // Fade out flash after a few seconds
-    $("<%= j(render 'shared/flash') %>").prependTo("body")
+    $("<%= j render('shared/flash') %>").prependTo("body")
                                         .fadeIn("slow")
                                         .delay(2500)
                                         .fadeOut("slow");
@@ -27,7 +27,7 @@
   $(".error-explanation").remove();
   $("input, textarea").removeClass("ajax_field_with_errors");
   // Add error messages above form
-  $("<%= j(render 'shared/error_messages', object: @resource) %>")
+  $("<%= j render('shared/error_messages', object: @resource) %>")
   .prependTo($("#resource-<%= @resource.id %> .resource-text"));
 
   // Check for url errors

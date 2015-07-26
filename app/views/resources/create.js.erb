@@ -1,13 +1,13 @@
 <% if @resource.valid? %>
   // Remove old error messages
   $(".error-explanation").remove();
-  $("<%= j(render @resource) %>").hide()
+  $("<%= j render(@resource) %>").hide()
                                  .prependTo(".resources-list")
                                  .slideDown("slow");
   // Empty form fields
   $("#new_resource")[0].reset();
   // Fade out flash after a few seconds
-  $("<%= j(render 'shared/flash') %>").prependTo("body")
+  $("<%= j render('shared/flash') %>").prependTo("body")
                                       .fadeIn("slow")
                                       .delay(2500)
                                       .fadeOut("slow");
@@ -17,6 +17,6 @@
   console.log("error detected");
   $(".error-explanation").remove();
   // Add error messages above form
-  $("<%= j(render 'shared/error_messages', object: @resource) %>")
+  $("<%= j render('shared/error_messages', object: @resource) %>")
   .prependTo("#new_resource");
 <% end %>

@@ -1,13 +1,13 @@
 class ResourcesController < ApplicationController
 
   def index
-    @resources = Resource.all
+    @resources = Resource.paginate(page: params[:page], per_page: 10)
     @resource  = Resource.new
   end
 
   def create
-    @resource = Resource.new(resource_params)
-    @resources = Resource.all.order(created_at: :desc)
+    @resource  = Resource.new(resource_params)
+    @resources = Resource.paginate(page: params[:page], per_page: 10)
    
     respond_to do |format|
       if @resource.save
