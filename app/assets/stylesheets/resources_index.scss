@@ -32,7 +32,6 @@
 
 .resource-url {
   font-size: 1.188em; /* 19px */
-  text-decoration: none;
   color: #313E50;
 }
 
@@ -67,12 +66,7 @@
 }
 
 .edit-delete a {
-  text-decoration: none;
   font-size: 0.813rem; /* 13px */
-}
-
-.edit-delete a:hover {
-  transition: 0.2s ease-in-out;
 }
 
 .delete-resource {
@@ -89,7 +83,6 @@
 
 .delete-resource input[type="submit"]:hover {
   color: #313E50;
-  transition: 0.2s ease-in-out;
 }
 
 input::-moz-focus-inner { /* Fix button problem in Firefox */
@@ -157,7 +150,6 @@ input[type="submit"]:focus:active { /* Remove border in Chrome */
   display: inline;
 }
 .pagination li a {
-  text-decoration: none;
   border: 1px solid #ddd;
   padding: 6px 12px;
   margin-left: -1px;
@@ -201,12 +193,17 @@ input[type="text"].edit-resource-tags {
 }
 
 /* Submit button always hidden, only show label */
-[id^="update-resource-btn-"] {
+[id^="update-resource-btn-"],
+.completed-form input[type="submit"] {
   display: none;
 }
 
 label[for^="update-resource-btn-"] {
   display: none;
+}
+
+label[for^="update-resource-btn-"]:hover {
+  color: #313E50;
 }
 
 /* Display forms when editing */

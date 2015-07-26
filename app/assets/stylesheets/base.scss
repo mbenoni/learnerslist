@@ -36,6 +36,7 @@ p {
 
 a {
   color: #738290;
+  text-decoration: none;
 }
 
 a:hover {
@@ -220,7 +221,6 @@ footer {
 }
 
 .main-nav ul li a {
-  text-decoration: none;
   padding: 10px;
   transition: 0.2s ease-in-out;
 }
@@ -235,7 +235,6 @@ footer {
 }
 
 .main-nav h1 a {
-  text-decoration: none;
   color: $primary-color;
 }
 
@@ -340,10 +339,6 @@ footer {
 
 .mobile-nav li:hover {
   color: #313E50;
-}
-
-.mobile-nav a {
-  text-decoration: none;
 }
 
 /* Hamburger icon with transition */
