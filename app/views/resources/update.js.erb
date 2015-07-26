@@ -1,17 +1,24 @@
 <% if @resource.valid? %>
-  $oldResourceItem = $("#resource-<%= @resource.id %>");
-  $newResourceItem = $("<%= j(render @resource) %>").hide();
+  <% if @resource.completed_status_changed == true %>
+    console.log("completed changed");
+    $("#resource-<%= @resource.id %>").replaceWith("<%= j(render @resource) %>");
+  <% else %>
+    console.log("completed not changed");
+    // Get updated item and replace the old
+    $oldResourceItem = $("#resource-<%= @resource.id %>");
+    $newResourceItem = $("<%= j(render @resource) %>").hide();
 
-  $oldResourceItem.slideUp("slow", function() {
-    $oldResourceItem.replaceWith($newResourceItem);
-    $newResourceItem.slideDown("slow");
-  });
+    $oldResourceItem.slideUp("slow", function() {
+      $oldResourceItem.replaceWith($newResourceItem);
+      $newResourceItem.slideDown("slow");
+    });
 
-  // Fade out flash after a few seconds
-  $("<%= j(render 'shared/flash') %>").prependTo("body")
-                                      .fadeIn("slow")
-                                      .delay(2500)
-                                      .fadeOut("slow");
+    // Fade out flash after a few seconds
+    $("<%= j(render 'shared/flash') %>").prependTo("body")
+                                        .fadeIn("slow")
+                                        .delay(2500)
+                                        .fadeOut("slow");
+  <% end %>
 <% end %>
 
 <% if @resource.errors.any? %>

@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
   def index
-    @resources = Resource.all.order(created_at: :desc)
+    @resources = Resource.all
     @resource  = Resource.new
   end
 
@@ -23,7 +23,7 @@ class ResourcesController < ApplicationController
 
   def update
     @resource = Resource.find(params[:id])
-
+    
     respond_to do |format|
       if @resource.update_attributes(resource_params)
         format.html { redirect_to resources_path,
@@ -50,6 +50,6 @@ class ResourcesController < ApplicationController
   private
 
     def resource_params
-      params.require(:resource).permit(:url, :description)
+      params.require(:resource).permit(:url, :description, :completed)
     end
 end

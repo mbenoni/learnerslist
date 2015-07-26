@@ -37,21 +37,6 @@ $(document).ready(function() {
     }
   });
 
-
-  // Add class to parent element and change text when clicked
-  $('.resources-list').on("click", ".resource-item input[type='checkbox']", function() {
-    var $parent    = $(this).closest(".resource-item");
-    var $labelText = $(this).next();
-
-    if ($parent.hasClass("completed")) {
-      $parent.removeClass("completed");
-      $labelText.text("Completed?");
-    } else {
-      $parent.addClass("completed");
-      $labelText.text("Completed");
-    }
-  });
-
   // Show or hide edit form when clicked
   $(".resources-list").on("click", ".edit-resource-btn", function(event) {
     event.preventDefault();
@@ -74,4 +59,9 @@ $(document).ready(function() {
                          .delay(2500)
                          .fadeOut("slow");
   }
+
+  // Submit form when clicking on checkbox
+  $(".resources-list").on("click", ".resource-item input[type='checkbox']", function() {
+    $(this).closest("form").submit();
+  });
 });
