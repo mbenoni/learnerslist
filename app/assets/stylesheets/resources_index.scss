@@ -146,29 +146,35 @@ input[type="submit"]:focus:active { /* Remove border in Chrome */
   margin: 25px 0 25px 0;
   font-size: 0.813em; /* 13px */
 }
-.pagination li {
+.pagination a {
   display: inline;
 }
-.pagination li a {
+.pagination .current {
+  font-style: normal;
+  font-weight: bold;
+}
+.pagination a,
+.pagination em,
+.pagination .previous_page,
+.pagination .next_page {
   border: 1px solid #ddd;
   padding: 6px 12px;
   margin-left: -1px;
 }
-.pagination li a:hover {
+.pagination a:hover {
   background-color: #4fc3f7;
   color: white;
 }
-.pagination li:first-child a {
+.pagination .previous_page {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.pagination li:last-child a {
+.pagination .next_page {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 .pagination-nav {
-  margin: 0 auto;
-  width: 225px;
+  text-align: center;
 }
 
 /* Edit resource form */
