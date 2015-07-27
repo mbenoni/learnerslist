@@ -50,6 +50,6 @@ class ResourcesController < ApplicationController
   private
 
     def resource_params
-      params.require(:resource).permit(:url, :description, :completed)
+      params.require(:resource).permit(:url, :description, :tag_list, :completed)
     end
 end

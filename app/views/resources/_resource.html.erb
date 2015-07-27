@@ -20,6 +20,9 @@
                                     placeholder: "Short description",
                                     maxlength: 80, 
                                     required: true %>
+      <%= f.text_field :tag_list, value: resource.tag_list.to_s,
+                                  class: "edit-resource-tags tags-icon",
+                                  placeholder: "Tags (comma separated)" %>
       <%= f.submit "Update resource", id: "update-resource-btn-#{resource.id}" %>
     <% end %>
 

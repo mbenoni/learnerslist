@@ -5,8 +5,8 @@
 jQuery ->
   if $(".pagination").length
     $(window).scroll ->
-      url = $('.pagination .next_page').attr('href')
-      if url && $(window).scrollTop() > $(document).height() - $(window).height() - 215
+      more_resources_url = $('.pagination .next_page').attr('href')
+      if more_resources_url && $(window).scrollTop() > $(document).height() - $(window).height() - 215
         $(".pagination").text("Loading more resources...")
-        $.getScript(url)
+        $.getScript(more_resources_url)
     $(window).scroll()

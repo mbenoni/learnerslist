@@ -2,6 +2,7 @@ $(".resources-list").append("<%= j render(@resources) %>");
 <% if @resources.next_page %>
   $(".pagination").replaceWith("<%= j render('resources/pagination') %>");
 <% else %>
+  $(window).off("scroll")
   $(".pagination").remove();
 <% end %>
 <% sleep 1 %>
