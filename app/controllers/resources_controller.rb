@@ -1,8 +1,12 @@
 class ResourcesController < ApplicationController
 
   def index
-    @resources = Resource.paginate(page: params[:page], per_page: 10)
     @resource  = Resource.new
+    if params[:tag]
+      @resources = Resource.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 10)
+    else
+      @resources = Resource.paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def create
