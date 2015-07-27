@@ -38,7 +38,7 @@
                              authenticity_token: true,
                              html: { class: "completed-form" } do |f| %>
         <label>
-          <%= f.check_box :completed, id: "custom-id" %>
+          <%= f.check_box :completed %>
           <span class="label-text"><%= label_text(resource) %></span>
         </label>
         <%= f.submit "Complete" %>

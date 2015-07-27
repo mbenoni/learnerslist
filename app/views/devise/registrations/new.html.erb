@@ -1,0 +1,17 @@
+<% provide(:title, "Sign up") %>
+<div class="container">
+  <div class="signup-form">
+    <h1>Sign up</h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <%= f.email_field :email, class: "email-icon", placeholder: "Email" %>
+
+      <%= f.password_field :password, class: "password-icon", placeholder: "Password" %>
+
+      <%= f.password_field :password_confirmation, class: "password-confirmation-icon", placeholder: "Password confirmation" %>
+
+      <%= f.submit "Create account", class: "btn btn-large" %>
+    <% end %>
+  </div>
+</div>

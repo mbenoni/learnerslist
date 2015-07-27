@@ -1,4 +1,5 @@
 class Resource < ActiveRecord::Base
+  belongs_to :user
   acts_as_taggable
   default_scope -> { order(created_at: :desc) }
   VALID_URL_REGEX = /\A(?:https?:\/\/)?(?:[\w]+\.)([a-zA-Z\.]{2,6})([\/\w\.\-&\?=]*)*\/?\z/

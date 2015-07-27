@@ -3,11 +3,13 @@ $(document).ready(function() {
 
   // Show login modal
   $(".login-modal").click(function() {
+    event.preventDefault();
     $("#login-overlay").addClass("visible");
   });
 
   // Show signup modal
-  $(".signup-modal").click(function() {
+  $(".signup-modal").click(function(event) {
+    event.preventDefault();
     $("#signup-overlay").addClass("visible");
   });
 

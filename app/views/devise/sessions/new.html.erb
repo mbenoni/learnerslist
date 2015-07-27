@@ -1,0 +1,20 @@
+<% provide(:title, "Log in") %>
+<div class="container">
+  <div class="login-form">
+    <h1>Log in</h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.email_field :email, class: "email-icon", placeholder: "E-mail" %>
+      
+      <%= f.password_field :password, class: "password-icon", placeholder: "Password" %>
+
+      <% if devise_mapping.rememberable? -%>
+        <label>
+          <%= f.check_box :remember_me %>
+          <span class="label-text">Remember me</span>
+        </label>
+      <% end -%>
+
+      <%= f.submit "Log in", class: "btn btn-small" %>
+    <% end %>
+  </div>
+</div>

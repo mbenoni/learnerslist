@@ -427,11 +427,13 @@ footer {
   background: rgba(95,207,128,0.85); /* green */
 }
 
-.flash-info {
+.flash-info,
+.flash-notice {
   background-color: rgba(68,157,220,0.85); /* blue */
 }
 
-.flash-warning {
+.flash-warning,
+.flash-alert {
   background-color: rgba(247,181,56,0.85); /* yellow */
 }
 

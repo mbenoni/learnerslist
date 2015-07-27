@@ -1,7 +1,8 @@
 class ResourcesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @resource  = Resource.new
+    @resource  = current_user.resources.build
     if params[:tag]
       @resources = Resource.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 10)
     else
@@ -10,7 +11,7 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    @resource  = Resource.new(resource_params)
+    @resource  = current_user.resources.build(resource_params)
     @resources = Resource.paginate(page: params[:page], per_page: 10)
    
     respond_to do |format|
