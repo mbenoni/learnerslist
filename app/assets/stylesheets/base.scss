@@ -477,9 +477,7 @@ textarea.ajax_field_with_errors {
 
 @media (min-width: 680px) {
 
-  body {
-    padding-top: 80px;
-  }
+  
 
 
   /*------------------------------*\
@@ -550,11 +548,21 @@ textarea.ajax_field_with_errors {
     display: block;
     margin: 0 auto;
   }
+}
 
+@media (min-width: 850px) {
 
   /*------------------------------*\
     HEADER LARGER DEVICES
   \*------------------------------*/
+
+  .mobile-nav ul {
+    display: none;
+  }
+
+  #nav-icon {
+    display: none;
+  }
 
   .main-nav {
     position: fixed;
@@ -567,17 +575,11 @@ textarea.ajax_field_with_errors {
   .main-nav ul {
     display: inline-block;
   }
-  
-  #nav-icon {
-    display: none;
+
+  body {
+    padding-top: 80px;
   }
 
-  .mobile-nav ul {
-    display: none;
-  }
-}
-
-@media (min-width: 850px) {
   p {
     font-size: 1em;
     margin-bottom: 2em;
