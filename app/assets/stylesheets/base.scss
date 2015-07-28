@@ -423,21 +423,21 @@ footer {
   letter-spacing: 1px;
 }
 
-.flash-success {
+.flash-success,
+.flash-notice {
   background: rgba(95,207,128,0.85); /* green */
 }
 
-.flash-info,
-.flash-notice {
+.flash-info {
   background-color: rgba(68,157,220,0.85); /* blue */
 }
 
-.flash-warning,
-.flash-alert {
+.flash-warning {
   background-color: rgba(247,181,56,0.85); /* yellow */
 }
 
-.flash-danger {
+.flash-danger,
+.flash-alert {
   background-color: rgba(237,63,24,0.85); /* red */
 }
 

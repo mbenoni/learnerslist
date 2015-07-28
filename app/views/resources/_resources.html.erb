@@ -1,0 +1,33 @@
+<% provide(:title, "All Resources") %>
+<div class="container">
+  <h1>All Learning Resources</h1>
+  <div class="texture-form resource-form">
+    <%= form_for @resource, remote: true,
+                            authenticity_token: true,
+                            html: { class: "centered" } do |f| %>
+      
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.text_field :url, class: "url-icon",
+                             placeholder: "URL",
+                             required: true,
+                             autocomplete: "off" %>
+
+      <%= f.text_area :description, class: "description-icon",
+                                    placeholder: "Short description",
+                                    required: true,
+                                    maxlength: 80 %>
+
+      <%= f.text_field :tag_list, class: "tags-icon",
+                                  placeholder: "Tags (comma separated)" %>
+
+      <%= f.submit "Add new resource", class: "btn btn-small" %>
+    <% end %>
+  </div>
+  
+  <ul class="resources-list">
+    <%= render @resources %>
+  </ul>
+
+  <%= render 'resources/pagination' %>
+</div>

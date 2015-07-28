@@ -1,18 +1,9 @@
 class ResourcesController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @resource  = current_user.resources.build
-    if params[:tag]
-      @resources = Resource.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 10)
-    else
-      @resources = Resource.paginate(page: params[:page], per_page: 10)
-    end
-  end
-
   def create
     @resource  = current_user.resources.build(resource_params)
-    @resources = Resource.paginate(page: params[:page], per_page: 10)
+    @resources = current_user.resources.paginate(page: params[:page], per_page: 10)
    
     respond_to do |format|
       if @resource.save
@@ -27,7 +18,7 @@ class ResourcesController < ApplicationController
   end
 
   def update
-    @resource = Resource.find(params[:id])
+    @resource = current_user.resources.find(params[:id])
     
     respond_to do |format|
       if @resource.update_attributes(resource_params)
@@ -42,7 +33,7 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    @resource = Resource.find(params[:id])
+    @resource = current_user.resources.find(params[:id])
     @resource.destroy
 
     respond_to do |format|
