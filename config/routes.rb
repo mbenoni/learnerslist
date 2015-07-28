@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root                'static_pages#home'
+  root                 'static_pages#home'
   get  'about'      => 'static_pages#about'
-  get  'tags/:tag'  => 'resources#index', as: :tag
+  get  'tags/:tag'  => 'static_pages#home', as: :tag
   resources :resources, only: [:index, :create, :update, :destroy]
   devise_for :users, :skip => [:sessions, :registrations]
   as :user do
