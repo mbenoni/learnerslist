@@ -1,4 +1,6 @@
 class Resource < ActiveRecord::Base
+  include ResourcesHelper
+
   belongs_to :user
   acts_as_taggable
   default_scope -> { order(created_at: :desc) }
@@ -7,6 +9,7 @@ class Resource < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 80 }
   attr_accessor :completed_status_changed
   before_update :check_completed_status
+  before_create :get_screenshot_url
 
   private
 

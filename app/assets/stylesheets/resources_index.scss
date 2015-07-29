@@ -111,6 +111,10 @@ input[type="submit"]:focus:active { /* Remove border in Chrome */
   background-color: #4fc3f7;
   color: white;
 }
+.resource-item.completed .resource-tags a {
+  background: white;
+  color: #4fc3f7;
+}
 
 /* Checkbox animation */
 @-webkit-keyframes tick {
