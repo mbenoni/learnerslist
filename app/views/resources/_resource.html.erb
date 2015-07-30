@@ -1,7 +1,7 @@
 <li class="resource-item <%= 'completed' if resource.completed? %>"
  id="resource-<%= resource.id %>">
   <div class="resource-image">
-    <%= image_tag "treehouse_thumb.png" %>
+    <%= image_tag resource.screenshot.url %>
   </div>
 
   <div class="resource-text">
