@@ -35,7 +35,7 @@ module ResourcesHelper
   # define parameters
   parameters = {
     :url         => url,
-    :width       => "260",
+    :width       => "288",
     :viewport    => "1440x900",
     :format      => "PNG"
   }
