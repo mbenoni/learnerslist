@@ -3,6 +3,7 @@ class Resource < ActiveRecord::Base
 
   belongs_to :user
   has_attached_file :screenshot, default_url: "placeholder.png"
+  validates_attachment_content_type :screenshot, :content_type => /\Aimage\/.*\Z/
   acts_as_taggable
   default_scope -> { order(created_at: :desc) }
   VALID_URL_REGEX = /\A(?:https?:\/\/)?(?:[\w]+\.)([a-zA-Z\.]{2,6})([\/\w\.\-&\?=]*)*\/?\z/
