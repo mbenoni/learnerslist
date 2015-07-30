@@ -1,6 +1,3 @@
-require 'cgi' unless defined?(CGI)
-require 'digest' unless defined?(Digest)
-
 module ResourcesHelper
 
   def urltitle(resource)

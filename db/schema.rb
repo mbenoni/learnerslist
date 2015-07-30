@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727165705) do
+ActiveRecord::Schema.define(version: 20150730093030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,14 @@ ActiveRecord::Schema.define(version: 20150727165705) do
   create_table "resources", force: :cascade do |t|
     t.string   "url"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.boolean  "completed"
     t.integer  "user_id"
+    t.string   "screenshot_file_name"
+    t.string   "screenshot_content_type"
+    t.integer  "screenshot_file_size"
+    t.datetime "screenshot_updated_at"
   end
 
   add_index "resources", ["user_id"], name: "index_resources_on_user_id", using: :btree
