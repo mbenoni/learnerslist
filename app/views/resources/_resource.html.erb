@@ -7,9 +7,11 @@
   <div class="resource-text">
     <%= link_to urltitle(resource), resource.url, class: "resource-url" %>
     <p class="resource-description"><%= resource.description %></p>
-    <p class="resource-tags">
-      <%= tags(resource) %>
-    </p>
+    <% if resource.tag_list.any? %>
+      <p class="resource-tags">
+        <%= tags(resource) %>
+      </p>
+    <% end %>
 
     <%= form_for resource, remote: true,
                            authenticity_token: true,
