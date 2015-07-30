@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root                 'static_pages#home'
   get  'about'      => 'static_pages#about'
   get  'tags/:tag'  => 'static_pages#home', as: :tag
-  resources :resources, only: [:index, :create, :update, :destroy]
+  resources :resources, only: [:create, :update, :destroy]
   devise_for :users, :skip => [:sessions, :registrations]
   as :user do
     get    'login'    => 'devise/sessions#new',         :as => :new_user_session

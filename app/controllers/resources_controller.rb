@@ -7,11 +7,11 @@ class ResourcesController < ApplicationController
    
     respond_to do |format|
       if @resource.save
-        format.html { redirect_to resources_path,
+        format.html { redirect_to root_path,
                       success: "New resource added" }
         format.js   { flash.now[:success] = "New resource added" }
       else
-        format.html { render 'index' }
+        format.html { render 'static_pages/home' }
         format.js   {}
       end
     end
@@ -22,11 +22,11 @@ class ResourcesController < ApplicationController
     
     respond_to do |format|
       if @resource.update_attributes(resource_params)
-        format.html { redirect_to resources_path,
+        format.html { redirect_to root_path,
                       success: "Resource updated" }
         format.js   { flash.now[:success] = "Resource updated" }
       else
-        format.html { render 'index' }
+        format.html { render 'static_pages/home' }
         format.js   {}
       end
     end
@@ -37,7 +37,7 @@ class ResourcesController < ApplicationController
     @resource.destroy
 
     respond_to do |format|
-      format.html { redirect_to resources_path,
+      format.html { redirect_to root_path,
                     success: "Resource deleted" }
       format.js   { flash.now[:success] = "Resource deleted" }
     end
