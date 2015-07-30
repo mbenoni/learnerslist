@@ -11,6 +11,7 @@ class Resource < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 80 }
   attr_accessor :completed_status_changed
   before_save   :validate_http_presence
+  after_save    :add_screenshot
   before_update :check_completed_status
 
   private
