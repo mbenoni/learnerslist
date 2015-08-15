@@ -17,3 +17,5 @@
 /config/aws.yml
 
 /config/secrets.yml
+
+/.env

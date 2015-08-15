@@ -27,10 +27,10 @@ module ResourcesHelper
 
   def screenshotlayer(url)
   # set access key
-  access_key = Rails.application.secrets.screenshotlayer_access_key
+  access_key = ENV['SCREENSHOTLAYER_ACCESS_KEY']
 
   # set secret keyword (defined in account dashboard)
-  secret_keyword = Rails.application.secrets.screenshotlayer_secret_keyword
+  secret_keyword = ENV['SCREENSHOTLAYER_SECRET_KEYWORD']
 
   # define parameters
   parameters = {

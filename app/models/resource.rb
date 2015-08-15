@@ -10,9 +10,9 @@ class Resource < ActiveRecord::Base
   validates :url,         presence: true, format: { with: VALID_URL_REGEX }
   validates :description, presence: true, length: { maximum: 80 }
   attr_accessor :completed_status_changed
-  before_save   :validate_http_presence
-  after_save    :add_screenshot
+  before_save   :validate_http_presence, :downcase_url
   before_update :check_completed_status
+  before_create :add_screenshot
 
   private
 
@@ -30,6 +30,10 @@ class Resource < ActiveRecord::Base
       if uri.scheme.nil?
         self.url = "http://#{url}"
       end
+    end
+
+    def downcase_url
+      self.url.downcase!
     end
 
     def add_screenshot
