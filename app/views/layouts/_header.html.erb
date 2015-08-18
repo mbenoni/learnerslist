@@ -1,22 +1,25 @@
 <header>
   <nav class="main-nav homepage-nav">
     <div class="container">
-      <h1><%= link_to "LearnersList", root_path %></h1>
+      <h1><%= link_to "LearnersList", root_path, class: "logo" %></h1>
       <div id="nav-icon">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Home", root_path, class: is_selected?(root_path) %></li>
+        <li><%= link_to "About", about_path, class: is_selected?(about_path) %></li>
         <% if user_signed_in? %>
-          <li><%= link_to "Settings", edit_user_registration_path %></li>
+          <li><%= link_to "Settings", edit_user_registration_path,
+                                      class: is_selected?(edit_user_registration_path) %></li>
           <li><%= link_to "Log out", destroy_user_session_path,
                                      method: :delete %></li>
         <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, class: "signup-modal" %></li>
-          <li><%= link_to "Log in", new_user_session_path, class: "login-modal" %></li>
+          <li><%= link_to "Sign up", new_user_registration_path,
+                  class: "signup-modal #{is_selected?(new_user_registration_path)}" %></li>
+          <li><%= link_to "Log in", new_user_session_path,
+                                    class: "login-modal #{is_selected?(new_user_session_path)}" %></li>
         <% end %>
       </ul>
     </div>
@@ -29,8 +32,20 @@
       <%= link_to about_path do %>
         <li>About</li>
       <% end %>
-      <%= link_to "#" do %>
-        <li>Log in</li>
+      <% if user_signed_in? %>
+        <%= link_to edit_user_registration_path do %>
+          <li>Settings</li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <li>Log out</li>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_registration_path do %>
+          <li>Sign up</li>
+        <% end %>
+        <%= link_to new_user_session_path do %>
+          <li>Log in</li>
+        <% end %>
       <% end %>
     </ul>
   </nav>

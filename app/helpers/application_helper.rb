@@ -20,5 +20,9 @@ module ApplicationHelper
  
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
-  end   
+  end
+
+  def is_selected?(path)
+    "selected" if current_page?(path)
+  end
 end
