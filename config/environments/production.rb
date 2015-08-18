@@ -71,7 +71,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'learnerslist.co',
+    :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
 
@@ -97,5 +97,9 @@ Rails.application.configure do
       :access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
+  }
+
+  config.middleware.use Rack::HostRedirect, {
+    'learnerslist.herokuapp.com' => 'www.learnerslist.co'
   }
 end
