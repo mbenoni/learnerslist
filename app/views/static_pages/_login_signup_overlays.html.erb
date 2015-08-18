@@ -1,0 +1,38 @@
+<div id="login-overlay">
+  <div class="form login-form" id="login-overlay-div">
+    <a class="exit-modal-icon" href="#"><i class="fa fa-times"></i></a>
+    <h1>Log in</h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.email_field :email, class: "email-icon", placeholder: "E-mail" %>
+      
+      <%= f.password_field :password, class: "password-icon", placeholder: "Password" %>
+
+      <% if devise_mapping.rememberable? -%>
+        <label>
+          <%= f.check_box :remember_me %>
+          <span class="label-text">Remember me</span>
+        </label>
+      <% end -%>
+
+      <%= f.submit "Log in", class: "btn btn-small" %>
+    <% end %>
+  </div>
+</div>
+
+<div id="signup-overlay">
+  <div class="form signup-form" id="signup-overlay-div">
+    <a class="exit-modal-icon" href="#"><i class="fa fa-times"></i></a>
+    <h1>Sign up</h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <%= f.email_field :email, class: "email-icon", placeholder: "Email" %>
+
+      <%= f.password_field :password, class: "password-icon", placeholder: "Password" %>
+
+      <%= f.password_field :password_confirmation, class: "password-confirmation-icon", placeholder: "Password confirmation" %>
+
+      <%= f.submit "Create account", class: "btn btn-large" %>
+    <% end %>
+  </div>
+</div>
