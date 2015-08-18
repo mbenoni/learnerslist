@@ -14,7 +14,9 @@
         </label>
       <% end -%>
 
-      <%= f.submit "Log in", class: "btn btn-small" %>
+      <%= link_to "Forgot password?", new_user_password_path, class: "forgot-password-text" %>
+
+      <%= f.submit "Log in", class: "btn btn-large" %>
     <% end %>
   </div>
 </div>

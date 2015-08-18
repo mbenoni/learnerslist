@@ -10,15 +10,16 @@
   width: 100%;
 }
 
-.login-form .btn {
+.forgot-password-text {
+  font-size: 0.813em; /* 13px */
   float: right;
 }
-
 
 /*------------------------------*\
   PAGE: SIGN UP
 \*------------------------------*/
 
+.login-form .btn,
 .signup-form .btn,
 .password-form .btn {
   margin: 30px auto 0 auto;
