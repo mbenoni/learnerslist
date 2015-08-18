@@ -3,7 +3,8 @@
 \*------------------------------*/
 
 .login-form,
-.signup-form {
+.signup-form,
+.password-form {
   margin: 0 auto;
   display: block;
   width: 100%;
@@ -18,7 +19,8 @@
   PAGE: SIGN UP
 \*------------------------------*/
 
-.signup-form .btn {
+.signup-form .btn,
+.password-form .btn {
   margin: 30px auto 0 auto;
   display: block;
 }
@@ -33,5 +35,9 @@
   .login-form,
   .signup-form {
     width: 390px;
+  }
+
+  .password-form {
+    width: 410px;
   }
 }
