@@ -6,8 +6,10 @@
   HERO SECTION
 \*------------------------------*/
 
+$primary-color: #4fc3f7;
+
 #hero {
-  background: #4fc3f7 image-url("pattern.svg");
+  background: $primary-color image-url("pattern.svg");
   padding-top: 40px;
   height: 400px;
   margin-bottom: 50px;
@@ -38,7 +40,7 @@
   width: 100%;
   display: block;
   background: white;
-  color: #4fc3f7;
+  color: $primary-color;
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 1.375em; /* 22px */

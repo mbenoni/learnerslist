@@ -39,7 +39,8 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a.selected {
   color: #313E50;
 }
 
@@ -238,8 +239,12 @@ footer {
   margin: 18px 0 0 0;
 }
 
-.main-nav h1 a {
+.logo {
   color: $primary-color;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: #3AB3EA;
+  }
 }
 
 
@@ -272,7 +277,7 @@ footer {
 #login-overlay,
 #signup-overlay {
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
