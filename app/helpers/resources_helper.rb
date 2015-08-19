@@ -29,7 +29,7 @@ module ResourcesHelper
   # set access key
   access_key = ENV['SCREENSHOTLAYER_ACCESS_KEY']
 
-  # set secret keyword (defined in account dashboard)
+  # set secret keyword
   secret_keyword = ENV['SCREENSHOTLAYER_SECRET_KEYWORD']
 
   # define parameters
