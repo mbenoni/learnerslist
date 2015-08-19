@@ -12,7 +12,7 @@ class Resource < ActiveRecord::Base
   attr_accessor :completed_status_changed
   before_save   :validate_http_presence, :downcase_url
   before_update :check_completed_status
-  before_create :add_screenshot
+  before_create :add_screenshot unless Rails.env.test?
 
   private
 

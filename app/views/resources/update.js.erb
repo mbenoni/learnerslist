@@ -32,19 +32,16 @@
 
   // Check for url errors
   <% if @resource.errors[:url].any? %>
-    console.log("invalid url, mag");
     $("#edit_resource_<%= @resource.id %> .edit-resource-url").addClass("ajax_field_with_errors");
   <% end %>
 
   // Check for description errors
   <% if @resource.errors[:description].any? %>
-    console.log("invalid url, mag");
     $("#edit_resource_<%= @resource.id %> .edit-resource-description").addClass("ajax_field_with_errors");
   <% end %>
 
   // // Check for tag errors
   // <% if @resource.errors[:tags] %>
-  //   console.log("invalid url, mag");
   //   $("#edit_resource_<%= @resource.id %> edit-resource-tags").addClass("ajax_field_with_errors");
   // <% end %>
 <% end %>
