@@ -1,9 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  url: MyString
-  description: MyText
-
-two:
-  url: MyString
-  description: MyText
+<% 30.times do |n| %>
+resource_<%= n %>:
+  url: http://www.example.com
+  description: "An example website description."
+  user: magnus
+<% end %>
