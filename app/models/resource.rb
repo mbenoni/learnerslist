@@ -12,7 +12,6 @@ class Resource < ActiveRecord::Base
   attr_accessor :completed_status_changed
   before_save   :validate_http_presence, :downcase_url
   before_update :check_completed_status
-  before_create :add_screenshot unless Rails.env.test?
 
   private
 
@@ -40,6 +39,6 @@ class Resource < ActiveRecord::Base
       # Get screenshot api url
       api_url = screenshotlayer(self.url)
       # Set screenshot to the returned image
-      self.screenshot = URI.parse(api_url)
+      self.update_attribute(:screenshot, URI.parse(api_url))
     end
 end
