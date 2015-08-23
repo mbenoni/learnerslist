@@ -20,6 +20,15 @@ body {
   padding-bottom: 100px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #313E50;
+}
+
 h1 {
   font-size: 2em;
   color: #313E50;
@@ -37,11 +46,10 @@ p {
 a {
   color: #738290;
   text-decoration: none;
-}
-
-a:hover,
-a.selected {
-  color: #313E50;
+  &:hover,
+  &.selected {
+    color: #313E50;
+  }
 }
 
 ul {
@@ -110,6 +118,13 @@ img {
   border-bottom: 3px solid #3AB3EA;
   border-radius: 2px;
   transition: 0.1s ease-in-out;
+  &:hover {
+    background: #3AB3EA;
+  }
+}
+
+a.btn:hover {
+  color: white;
 }
 
 .btn-small {
@@ -120,18 +135,13 @@ img {
   padding: 15px 35px;
 }
 
-.btn:hover {
-  background: #3AB3EA;
-}
-
 /* Form with textured background */
 .texture-form {
   background: image-url("pattern_gray.svg");
   padding: 50px 20px;
-}
-
-.texture-form .btn {
-  margin: 20px auto 0;
+  .btn {
+    margin: 20px auto 0;
+  }
 }
 
 /* Form icons */
@@ -205,33 +215,28 @@ footer {
   height: 80px;
   background-color: white;
   border-bottom: 1px solid rgba(140, 152, 158, 0.2);
-}
-
-.main-nav ul {
-  float: right;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-top: 30px;
-  display: none;
-}
-
-.main-nav ul li {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-.main-nav ul li a {
-  padding: 10px;
-  transition: 0.2s ease-in-out;
-}
-
-.main-nav ul li:last-child {
-  margin-right: 0;
-}
-
-.main-nav ul li:last-child a {
-  padding-right: 0;
+  ul {
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    display: none;
+    li {
+      display: inline-block;
+      margin: 0 20px;
+      a {
+        padding: 10px;
+        transition: 0.2s ease-in-out;
+      }
+      &:last-child {
+        margin-right: 0;
+        a {
+          padding-right: 0;
+        }
+      }
+    }
+  }
 }
 
 .main-nav h1 {
@@ -261,12 +266,11 @@ footer {
 .footer-text {
   margin: 15px 0;
   font-size: 0.750em; /* 12px */
-}
-
-.footer-text .heart {
-  display: inline;
-  color: #E83838;
-  font-size: 1em; /* 12px */
+  .heart {
+    display: inline;
+    color: #E83838;
+    font-size: 1em; /* 12px */
+  }
 }
 
 
@@ -605,5 +609,11 @@ textarea.ajax_field_with_errors {
 
   .main-nav h1 {
     font-size: 2em;
+  }
+}
+
+@media (min-width: 1080px) {
+  .col-6-large {
+    width: 50%;
   }
 }
